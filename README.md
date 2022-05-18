@@ -1,1 +1,1 @@
-# bettingoddscalculator
+# Betting Odds Converter
