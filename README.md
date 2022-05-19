@@ -14,7 +14,7 @@ $ Rscript bettingoddscalculator.R
 
 ![image](https://github.com/SanjayShetty01/betting-odds-converter/blob/main/img/carbon.png)
 
-you could run the script system wide using `npm`
+You can run the script system wide using `npm`
 
 Using npm: 
 
