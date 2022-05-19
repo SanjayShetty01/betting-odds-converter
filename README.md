@@ -6,8 +6,7 @@ A CLI based Application which allows to convert various type  of Betting odds to
 Using  `git`
 
 ```bash
-$ cd
-$ git clone 
+$ git clone https://github.com/SanjayShetty01/betting-odds-converter
 $ cd betting-odds-calculator
 $ Rscript bettingoddscalculator.R
 ```
