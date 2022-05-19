@@ -1,0 +1,11 @@
+{
+  "name": "BettingOddsConverter",
+  "version": "1.0.0",
+  "description": "",
+  "bin": {
+    "betting-converter": "oddsconverter.R"
+  },
+  "keywords": [],
+  "author": "Sanjaya J Shetty",
+  "license": "GNU GPL v3"
+}
