@@ -8,7 +8,7 @@ Using  `git`
 ```bash
 $ git clone https://github.com/SanjayShetty01/betting-odds-converter
 $ cd betting-odds-calculator
-$ Rscript bettingoddscalculator.R
+$ Rscript oddscalculator.R
 ```
 
 ![image](https://github.com/SanjayShetty01/betting-odds-converter/blob/main/img/carbon.png)
