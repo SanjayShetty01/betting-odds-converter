@@ -46,11 +46,6 @@ user.input <- function(prompt) {
 #' The function allows you to covert the American Moneyline to implied
 #' probabilities.
 #' 
-#' @details 
-#' American Moneyline would be denoted by a integer number. The American
-#' Moneyline, if positive number states the amount you would win if you wager $100,
-#' But if it's negative, then it would state the amount you would require wager to win
-#' $100. 
 #' 
 #' @return numeric, The implied probability is returned. 
 
@@ -78,9 +73,6 @@ moneylineToProb <- function(){
 #' The function allows you convert decimal odds entered by the user into implied
 #' probability. 
 #' 
-#' @details 
-#' The decimal odds quote the potential returns that would be paid if the bet
-#' succeeds in your favour. 
 #' 
 #' @return numeric, The implied probability is returned. 
 
@@ -100,10 +92,10 @@ decimalToProb <- function(){
 
 #' Converts fraction odds to Implied Probability.
 #'
-#' @details 
-#' Like the decimal odds, the fractional bet also quote the potential returns that 
-#' would be paid if the bet succeeds in your favour. Albeit in a fractional format. 
-#'
+#' The function allows you convert decimal odds entered by the user into implied
+#' probability.
+#'                 
+#'                 
 #' @return numeric, The implied probability is returned. 
 
 fractionToProb <- function(fraction){
