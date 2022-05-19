@@ -14,9 +14,13 @@ $ Rscript bettingoddscalculator.R
 
 ![image](https://github.com/SanjayShetty01/betting-odds-converter/blob/main/img/carbon.png)
 
-Using npm 
+you could run the script system wide using `npm`
+
+Using npm: 
+
 ```bash
-$ npm install bettingconvertor
+$ cd /path/to/ betting-odds-converter
+$ npm link
 $ betingconvertor
 ```
 
