@@ -46,6 +46,11 @@ user.input <- function(prompt) {
 #' The function allows you to covert the American Moneyline to implied
 #' probabilities.
 #' 
+#' @details 
+#' American Moneyline would be denoted by a integer number. The American
+#' Moneyline, if positive number states the amount you would win if you wager $100,
+#' But if it's negative, then it would state the amount you would require wager to win
+#' $100. 
 #' 
 #' @return numeric, The implied probability is returned. 
 
@@ -73,6 +78,9 @@ moneylineToProb <- function(){
 #' The function allows you convert decimal odds entered by the user into implied
 #' probability. 
 #' 
+#' @details 
+#' The decimal odds quote the potential returns that would be paid if the bet
+#' succeeds in your favour. 
 #' 
 #' @return numeric, The implied probability is returned. 
 
@@ -92,10 +100,10 @@ decimalToProb <- function(){
 
 #' Converts fraction odds to Implied Probability.
 #'
-#' The function allows you convert decimal odds entered by the user into implied
-#' probability.
-#'                 
-#'                 
+#' @details 
+#' Like the decimal odds, the fractional bet also quote the potential returns that 
+#' would be paid if the bet succeeds in your favour. Albeit in a fractional format. 
+#'
 #' @return numeric, The implied probability is returned. 
 
 fractionToProb <- function(fraction){
@@ -114,40 +122,38 @@ cli_h1('')
 figlet("Betting Odds Converter")
 cli_text('Calculates Implied Probability')
 exitOut = FALSE
-  while(exitOut == FALSE){
+while(exitOut == FALSE){
+  
+  cli_h1('Select the Converter')
+  
+  fun <- function() {
+    cli_ol()
+    cli_li("Moneyline to Implied probability")
+    cli_li("Decimal Odds to Implied probability")
+    cli_li("Fractional Odds to Implied probability")
+    cli_end()
+  }
+  fun()
+  
+  cli_h1('')              
+  suppressWarnings(choice <- (user.input(prompt = 'Enter your Choice: ')))
+  
+  if(choice == '1' | choice == '2' | choice == '3'){
+    ans = switch(choice,
+                 '1' = sprintf('The Implied Probability is %.02f', moneylineToProb()),
+                 '2' = sprintf('The Implied Probability is %.02f',decimalToProb()),
+                 '3' = sprintf('The Implied Probability is %.02f',fractionToProb()))
     
-      cli_h1('Select the Converter')
     
-      fun <- function() {
-        cli_ol()
-        cli_li("Moneyline to Implied probability")
-        cli_li("Decimal Odds to Implied probability")
-        cli_li("Fractional Odds to Implied probability")
-        cli_end()
-      }
-      fun()
-      
-cli_h1('')              
-       suppressWarnings(choice <- as.integer(user.input(prompt = 'Enter your Choice: ')))
+    cli_text(ans)  
+  } else{
+    cli_alert_warning('Please have your Choice between 1-3')
     
-        if(is.na(choice)){
-          cli_alert_warning('Please have your Choice between 1-3')
-        } else if(choice == 1){
-         ans = sprintf('The Implied Probability is %.02f', moneylineToProb())
-         cli_text(ans)
-        }else  if(choice == 2){
-          ans = sprintf('The Implied Probability is %.02f',decimalToProb())
-          cli_text(ans)
-        } else if(choice == 3){
-          ans = sprintf('The Implied Probability is %.02f',fractionToProb())
-          cli_text(ans)
-        }else{
-          cli_alert_warning('Please have your Choice between 1-3')
-        }
-        
-        finalCall <- user.input(prompt = 'Press x to exit or any key to continue: ')
-        
-        exitOut = ifelse(finalCall == 'x', TRUE, FALSE)
-
-
+  }
+  
+  finalCall <- user.input(prompt = 'Press x to exit or any key to continue: ')
+  
+  exitOut = ifelse(finalCall == 'x', TRUE, FALSE)
+  
+  
 }
