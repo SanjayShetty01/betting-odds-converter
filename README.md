@@ -1,7 +1,12 @@
 # Betting Odds Converter
 A CLI based Application which allows to convert various type  of Betting odds to Implied Probability. The implied probability indicates you the probability of winning assigned by the betting market.
 
-## Installation
+## Requirement 
+
+- git
+- R
+- npm (*Optional*)
+## Usage
 
 Using  `git`
 
@@ -18,6 +23,7 @@ You can run the script system wide using `npm`
 Using npm: 
 
 ```bash
+$ git clone https://github.com/SanjayShetty01/betting-odds-converter
 $ cd /path/to/ betting-odds-converter
 $ npm link
 $ betingconvertor
