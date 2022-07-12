@@ -17,22 +17,21 @@ suppressMessages(if(!require(pacman)) install.packages('pacman'))
 suppressMessages(pacman::p_load(Rfiglet, cli))
 
 
-
-#' Reads the user input.
-#' 
-#' @param Character, The prompt message for the user. 
-#' 
-#' @description  A function to read the user input in both Interactive and 
-#' Non-Interactive mode. The function is similar to `readlines`. But due since 
-#' function `readline` would return `Na` when used non-interactively. To get the
-#' same functionality we would use `readLines` to read the input by the user.
-#' 
-#' @return Character, the user input would be returned. 
-#' 
-#' @example Name <- user.input('What is your Name? ')
-
-
 user.input <- function(prompt) {
+  
+  #' Reads the user input.
+  #' 
+  #' @param Character, The prompt message for the user. 
+  #' 
+  #' @description  A function to read the user input in both Interactive and 
+  #' Non-Interactive mode. The function is similar to `readlines`. But due since 
+  #' function `readline` would return `Na` when used non-interactively. To get the
+  #' same functionality we would use `readLines` to read the input by the user.
+  #' 
+  #' @return Character, the user input would be returned. 
+  #' 
+  #' @example Name <- user.input('What is your Name? ')
+
   if (interactive()) {
     return(readline(prompt))
   } else {
@@ -41,20 +40,20 @@ user.input <- function(prompt) {
   }
 }
 
-#' Converts  Moneyline to Implied Probabilities.
-#' 
-#' The function allows you to covert the American Moneyline to implied
-#' probabilities.
-#' 
-#' @details 
-#' American Moneyline would be denoted by a integer number. The American
-#' Moneyline, if positive number states the amount you would win if you wager $100,
-#' But if it's negative, then it would state the amount you would require wager to win
-#' $100. 
-#' 
-#' @return numeric, The implied probability is returned. 
-
 moneylineToProb <- function(){
+  
+  #' Converts  Moneyline to Implied Probabilities.
+  #' 
+  #' The function allows you to covert the American Moneyline to implied
+  #' probabilities.
+  #' 
+  #' @details 
+  #' American Moneyline would be denoted by a integer number. The American
+  #' Moneyline, if positive number states the amount you would win if you wager $100,
+  #' But if it's negative, then it would state the amount you would require wager to win
+  #' $100. 
+  #' 
+  #' @return numeric, The implied probability is returned.
   
   suppressWarnings(moneyline <- as.integer(user.input(prompt = 'Enter the Moneyline: ')))
   
@@ -73,19 +72,19 @@ moneylineToProb <- function(){
 }
 }
 
-#' Converts decimal odds to Implied Probability
-#' 
-#' The function allows you convert decimal odds entered by the user into implied
-#' probability. 
-#' 
-#' @details 
-#' The decimal odds quote the potential returns that would be paid if the bet
-#' succeeds in your favour. 
-#' 
-#' @return numeric, The implied probability is returned. 
-
 
 decimalToProb <- function(){
+  
+  #' Converts decimal odds to Implied Probability
+  #' 
+  #' The function allows you convert decimal odds entered by the user into implied
+  #' probability. 
+  #' 
+  #' @details 
+  #' The decimal odds quote the potential returns that would be paid if the bet
+  #' succeeds in your favour. 
+  #' 
+  #' @return numeric, The implied probability is returned. 
   
   suppressWarnings(decimal <- as.integer(user.input(prompt = 'Enter the Decimal Odds: ')))
   
@@ -98,15 +97,16 @@ decimalToProb <- function(){
 }
 }
 
-#' Converts fraction odds to Implied Probability.
-#'
-#' @details 
-#' Like the decimal odds, the fractional bet also quote the potential returns that 
-#' would be paid if the bet succeeds in your favour. Albeit in a fractional format. 
-#'
-#' @return numeric, The implied probability is returned. 
 
 fractionToProb <- function(fraction){
+  
+  #' Converts fraction odds to Implied Probability.
+  #'
+  #' @details 
+  #' Like the decimal odds, the fractional bet also quote the potential returns that 
+  #' would be paid if the bet succeeds in your favour. Albeit in a fractional format. 
+  #'
+  #' @return numeric, The implied probability is returned. 
  
   suppressWarnings(fraction <- as.integer(user.input(prompt = 'Enter the Fractional Odds: ')))
 
