@@ -1,3 +1,5 @@
+box::use(./user_input[user.input])
+
 moneylineToProb <- function(){
   
   #' Converts  Moneyline to Implied Probabilities.

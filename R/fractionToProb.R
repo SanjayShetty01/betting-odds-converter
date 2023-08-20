@@ -1,3 +1,5 @@
+box::use(./user_input[user.input])
+
 fractionToProb <- function(fraction){
   
   #' Converts fraction odds to Implied Probability.

@@ -12,6 +12,7 @@ user.input <- function(prompt) {
   #' @return Character, the user input would be returned. 
   #' 
   #' @example Name <- user.input('What is your Name? ')
+  #' @export user.input
 
   if (interactive()) {
     return(readline(prompt))

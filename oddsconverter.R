@@ -17,6 +17,11 @@
 suppressMessages(if(!require(pacman)) install.packages("pacman"))
 suppressMessages(pacman::p_load(Rfiglet, cli, box))
 
+box::use(./R/user_input[user.input])
+box::use(./R/fractionToProb[fractionToProb])
+box::use(./R/moneylineToProb[moneylineToProb])
+box::use(./R/decimalToProb[decimalToProb])
+
 cli_h1('')    
 figlet("Betting Odds Converter")
 cli_text('Calculates Implied Probability')

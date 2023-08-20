@@ -1,3 +1,6 @@
+box::use(./user_input[user.input])
+
+
 decimalToProb <- function(){
   
   #' Converts decimal odds to Implied Probability
