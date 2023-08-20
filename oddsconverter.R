@@ -11,112 +11,11 @@
 #' @include pacman 
 #' @include  Rfiglet 
 #' @include  cli
+#' @include box
 
 
-suppressMessages(if(!require(pacman)) install.packages('pacman'))
-suppressMessages(pacman::p_load(Rfiglet, cli))
-
-
-user.input <- function(prompt) {
-  
-  #' Reads the user input.
-  #' 
-  #' @param Character, The prompt message for the user. 
-  #' 
-  #' @description  A function to read the user input in both Interactive and 
-  #' Non-Interactive mode. The function is similar to `readlines`. But due since 
-  #' function `readline` would return `Na` when used non-interactively. To get the
-  #' same functionality we would use `readLines` to read the input by the user.
-  #' 
-  #' @return Character, the user input would be returned. 
-  #' 
-  #' @example Name <- user.input('What is your Name? ')
-
-  if (interactive()) {
-    return(readline(prompt))
-  } else {
-    cat(prompt)
-    return(readLines("stdin", n=1))
-  }
-}
-
-moneylineToProb <- function(){
-  
-  #' Converts  Moneyline to Implied Probabilities.
-  #' 
-  #' The function allows you to covert the American Moneyline to implied
-  #' probabilities.
-  #' 
-  #' @details 
-  #' American Moneyline would be denoted by a integer number. The American
-  #' Moneyline, if positive number states the amount you would win if you wager $100,
-  #' But if it's negative, then it would state the amount you would require wager to win
-  #' $100. 
-  #' 
-  #' @return numeric, The implied probability is returned.
-  
-  suppressWarnings(moneyline <- as.integer(user.input(prompt = 'Enter the Moneyline: ')))
-  
-  if(is.na(moneyline)){
-    cli_alert_danger('Please Enter a Numeric Value for Moneyline')
-    
-  }else{
-  
-      if(moneyline > 0){
-        prob <- moneyline/(moneyline+100)
-        return(round(prob*100,2))
-}     else{
-        prob <- (moneyline*-1)/((moneyline*-1)+100)
-        return(round(prob*100,2))
-  }
-}
-}
-
-
-decimalToProb <- function(){
-  
-  #' Converts decimal odds to Implied Probability
-  #' 
-  #' The function allows you convert decimal odds entered by the user into implied
-  #' probability. 
-  #' 
-  #' @details 
-  #' The decimal odds quote the potential returns that would be paid if the bet
-  #' succeeds in your favour. 
-  #' 
-  #' @return numeric, The implied probability is returned. 
-  
-  suppressWarnings(decimal <- as.integer(user.input(prompt = 'Enter the Decimal Odds: ')))
-  
-  if(is.na(decimal)){
-    cli_alert_danger('Please Enter a Numeric Value for Decimal Odds')
-    
-  }else{
-  prob <- 1/decimal
-  return(round(prob*100,2))
-}
-}
-
-
-fractionToProb <- function(fraction){
-  
-  #' Converts fraction odds to Implied Probability.
-  #'
-  #' @details 
-  #' Like the decimal odds, the fractional bet also quote the potential returns that 
-  #' would be paid if the bet succeeds in your favour. Albeit in a fractional format. 
-  #'
-  #' @return numeric, The implied probability is returned. 
- 
-  suppressWarnings(fraction <- as.integer(user.input(prompt = 'Enter the Fractional Odds: ')))
-
-  if(is.na(fraction)) {
-    cli_alert_danger('Please Enter a Integer for Fractional Odds')
-} else{  
-    prob <- 1/(fraction+1)
-    return(round(prob*100,2))
-}
-}
+suppressMessages(if(!require(pacman)) install.packages("pacman"))
+suppressMessages(pacman::p_load(Rfiglet, cli, box))
 
 cli_h1('')    
 figlet("Betting Odds Converter")
