@@ -1,0 +1,1 @@
+print(Math.round(5.2))

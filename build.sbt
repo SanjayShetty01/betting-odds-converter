@@ -6,4 +6,5 @@ lazy val root = (project in file("."))
   .settings(
     name := "betting-calc-v2"
   )
-  
+
+libraryDependencies += "com.colofabrix.scala" %% "figlet4s-core" % "0.3.2"
