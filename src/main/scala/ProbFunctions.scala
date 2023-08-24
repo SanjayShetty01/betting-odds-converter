@@ -1,7 +1,7 @@
 import scala.math._
 object ProbFunctions {
 
-  def roundToSecondDecimal(floatNum : Float) : Float = (floatNum * 100).round.toFloat / 100.0f
+  private def roundToSecondDecimal(floatNum : Float) : Float = (floatNum * 100).round.toFloat / 100.0f
 
   def moneylineProb(moneyline : Int) : Float = {
     var prob : Float = 0.0f
