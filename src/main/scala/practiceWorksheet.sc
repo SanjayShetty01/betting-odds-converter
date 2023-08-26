@@ -1,1 +1,2 @@
-print(Math.round(5.2))
+val g = 1+2
+print(g)
