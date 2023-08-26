@@ -1,7 +1,0 @@
-
-object ProbCalculator {
-
-
-
-}
-
