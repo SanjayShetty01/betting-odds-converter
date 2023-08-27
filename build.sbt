@@ -11,3 +11,10 @@ libraryDependencies ++= Seq(
   "com.colofabrix.scala" %% "figlet4s-core" % "0.3.0" cross CrossVersion.for3Use2_13,
   "com.colofabrix.scala" %% "figlet4s-effects" % "0.3.0" cross CrossVersion.for3Use2_13,
 )
+
+scalacOptions ++= Seq(
+  "-deprecation",
+  "-encoding", "UTF-8",
+  "-feature",
+  "-unchecked"
+)

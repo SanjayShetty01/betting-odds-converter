@@ -40,7 +40,7 @@ object BettingOddsCalculator {
   def moneyProbCalc() : Unit = {
     println(Console.BLUE +"Enter the Moneyline: ")
 
-    val userEnterMoneylinevalue : Try[Int] = Try(readInt())
+    val userEnterMoneylinevalue : Try[Float] = Try(readFloat())
 
     userEnterMoneylinevalue match {
       case Failure(value) =>

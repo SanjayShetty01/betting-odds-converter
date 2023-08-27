@@ -10,7 +10,7 @@ object MyApp extends App {
   }
 
   private def whichCalcDecider(choosen : Int): Unit = {
-    choosen match
+    choosen match {
       case 1 =>
         BettingOddsCalculator.moneyProbCalc()
       case 2 =>
@@ -20,8 +20,8 @@ object MyApp extends App {
 
       case _ =>
         println(Console.RED + "Please have your Choice between 1-3")
+    }
   }
-
 
   println("")
   figletDrawer("Betting Odds Converter")
@@ -56,7 +56,7 @@ object MyApp extends App {
     println("Press x to exit or any key to continue: ")
     val finalCall: String = readLine()
 
-        exit = if finalCall == "x" || finalCall == "X" then true else false
+        exit = if (finalCall == "x" || finalCall == "X") then true else false
   }
 
 }
