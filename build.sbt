@@ -10,6 +10,7 @@ lazy val root = (project in file("."))
 libraryDependencies ++= Seq(
   "com.colofabrix.scala" %% "figlet4s-core" % "0.3.0" cross CrossVersion.for3Use2_13,
   "com.colofabrix.scala" %% "figlet4s-effects" % "0.3.0" cross CrossVersion.for3Use2_13,
+  "org.scalatest" %% "scalatest" % "3.2.15" % "test"
 )
 
 scalacOptions ++= Seq(

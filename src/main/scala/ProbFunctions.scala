@@ -19,10 +19,9 @@ object ProbFunctions {
    * @return The implied probability as a Float, rounded to two decimal places.
    */
   def moneylineProb(moneyline: Float): Float = moneyline match {
-    case moneylineValue if moneylineValue > 0 => roundToSecondDecimal((moneylineValue / (moneylineValue + 100.0f)) * 100)
+    case moneylineValue if moneylineValue > 0 => roundToSecondDecimal((100 / (moneyline + 100.0f)) * 100)
     case _ => roundToSecondDecimal(((moneyline * -1) / ((moneyline * -1) + 100)) * 100)
   }
-
 
   /**
    * Calculate the implied probability from Decimal odds.
@@ -30,7 +29,7 @@ object ProbFunctions {
    * @param decimal The Decimal odds as a Float.
    * @return The implied probability as a Float, rounded to two decimal places.
    */
-  def decimalProb(decimal: Float): Float = roundToSecondDecimal(1.0f / decimal)
+  def decimalProb(decimal: Float): Float = roundToSecondDecimal((1.0f / decimal)* 100)
 
   /**
    * Calculate the implied probability from Fractional odds.
@@ -38,6 +37,6 @@ object ProbFunctions {
    * @param fractions The Fractional odds as a Float.
    * @return The implied probability as a Float, rounded to two decimal places.
    */
-  def fractionProb(fractions: Float): Float = roundToSecondDecimal(1.0f / fractions)
+  def fractionProb(fractions: Float): Float = roundToSecondDecimal((1.0f / fractions)* 100)
 
 }
