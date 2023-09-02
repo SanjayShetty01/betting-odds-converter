@@ -37,7 +37,9 @@ object MyApp {
     }
 
     println("")
-    figletDrawer("Betting Odds Converter")
+    //figletDrawer("Betting Odds Converter")
+    println(Console.MAGENTA + "Betting Odds Converter")
+    println("")
     println(Console.BLUE + "Calculates Implied Probability")
 
     var exit: Boolean = false
