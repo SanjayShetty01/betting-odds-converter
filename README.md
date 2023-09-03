@@ -55,6 +55,9 @@ To get started with the Betting Odds Calculator, you'll need to install it on yo
 
 ## Usage
 
+#### Screenshot
+![app screenshot](doc/carbon.png)
+
 1. **Select Betting Odds Type:**
    - Choose the type of betting odds you want to convert (American Moneyline, Decimals, or Fractions).
 
