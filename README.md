@@ -73,4 +73,4 @@ Contributions to this project are welcome. Feel free to open issues or submit pu
 
 ## License
 
-This project is licensed under the [GNU General Public License (GPL)]
+This project is licensed under the MIT License.
