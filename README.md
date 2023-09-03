@@ -42,7 +42,7 @@ To get started with the Betting Odds Calculator, you'll need to install it on yo
    - Ensure you have Java 11 or a compatible version installed on your system.
 
 2. **Download the JAR file:**
-   - You can download the executable JAR file from the [releases page](link_to_releases_page).
+   - You can download the executable JAR file from the [releases page](https://github.com/SanjayShetty01/betting-odds-converter/releases).
 
 3. **Run the Calculator:**
    - Open your terminal or command prompt.
