@@ -1,5 +1,7 @@
 # Betting Odds Calculator
 
+[![Scala Tests](https://github.com/SanjayShetty01/betting-odds-converter/actions/workflows/scala.yml/badge.svg)](https://github.com/SanjayShetty01/betting-odds-converter/actions/workflows/scala.yml)
+
 A Command Line Interface (CLI) application that converts various types of betting odds into implied probabilities. Implied probability provides insight into the likelihood of winning as determined by the betting market.
 
 ## Table of Contents
