@@ -9,10 +9,14 @@ pub fn moneyline_prob(moneyline :f32) -> f32 {
     };
 }
 
+fn calculate_prob(odds: f32) -> f32 {
+    round_to_two_decimal_places((1.0 / odds) * 100.0)
+}
+
 pub fn decimal_prob(decimal: f32) -> f32 {
-    round_to_two_decimal_places((1.0 / decimal) * 100.0)
+    calculate_prob(decimal)
 }
 
 pub fn fraction_prob(fractions: f32) -> f32 {
-    round_to_two_decimal_places((1.0 / decimal) * 100.0)
+    calculate_prob(fractions)
 }
