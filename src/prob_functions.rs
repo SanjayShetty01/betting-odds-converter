@@ -3,10 +3,12 @@ fn round_to_two_decimal_places(float_number :f32) -> f32{
 }
 
 pub fn moneyline_prob(moneyline :f32) -> f32 {
-    let probability = match moneyline {
-        moneylineValue if moneylineValue > 0.0 => (100.0 / (moneyline + 100.0)) * 100,
-        _ => ((moneyline.abs()) / (moneyline.abs() + 100)) * 100
+    let probability: f32= match moneyline {
+        moneyline_value if moneyline_value > 0.0 => (100.0 / (moneyline + 100.0)) * 100.0,
+        _ => ((moneyline.abs()) / (moneyline.abs() + 100.0)) * 100.0
     };
+
+    return probability;
 }
 
 fn calculate_prob(odds: f32) -> f32 {
