@@ -1,12 +1,16 @@
 use crate::betting_odds_calculator;
+use std::num::ParseIntError;
 use colored::*;
 
-pub fn which_calc_decider(choice: i32) {
+pub fn which_calc_decider(choice: &Result<i32, ParseIntError>) {
     match choice {
-        1 => betting_odds_calculator::money_prob_calc(),
-        2 => betting_odds_calculator::decimal_prob_calc(),
-        3 => betting_odds_calculator::fraction_prob_calc(),
-        _ => println!("{}", "Please choose a valid option between 1-3.".red()),
+        Ok(value) => match value {
+            1 => println!("Moneyline to Implied Probability"),
+            2 => println!("Decimal Odds to Implied Probability"),
+            3 => println!("Fractional Odds to Implied Probability"),
+            _ => println!("Please choose a valid option between 1-3."),
+        },
+        Err(_) => println!("Invalid number! Please try again."),
     }
 }
 
