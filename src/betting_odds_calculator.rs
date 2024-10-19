@@ -15,7 +15,7 @@ pub fn decimal_prob_calc() {
         Ok(value) => {
             println!("{}", "Calculating the Odds...".green());
             let prob : f32 = prob_functions::decimal_prob(value);
-            println!("{}", format!("The Implied Probability is {}", prob).green());
+            println!("{}", format!("The Implied Probability is {}%", prob).green());
         }
 
         Err(_) => {
@@ -37,7 +37,7 @@ pub fn money_prob_calc() {
         Ok(value) => {
             println!("{}", "Calculating the Odds...".green());
             let prob : f32 = prob_functions::moneyline_prob(value);
-            println!("{}", format!("The Implied Probability is {}", prob).green());
+            println!("{}", format!("The Implied Probability is {}%", prob).green());
         }
 
         Err(_) => {

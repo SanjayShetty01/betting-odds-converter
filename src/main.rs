@@ -1,4 +1,3 @@
-use std::fmt::format;
 use colored::*;
 mod betting_odds_calculator;
 mod prob_functions;
