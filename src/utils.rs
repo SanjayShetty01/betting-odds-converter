@@ -7,7 +7,7 @@ pub fn which_calc_decider(choice: &Result<i32, ParseIntError>) {
         Ok(value) => match value {
             1 => betting_odds_calculator::money_prob_calc(),
             2 => betting_odds_calculator::decimal_prob_calc(),
-            3 => betting_odds_calculator::money_prob_calc(),
+            3 => betting_odds_calculator::fraction_prob_calc(),
             _ => println!("Please choose a valid option between 1-3."),
         },
         Err(_) => println!("Invalid number! Please try again."),

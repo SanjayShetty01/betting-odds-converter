@@ -8,3 +8,28 @@ edition = "2021"
 [dependencies]
 figlet-rs = "0.1.5"
 colored = "2"
+
+[package.metadata.generate-rpm]
+name = "betting_odds_converter"
+version = "0.1.0"
+license = "MIT"
+summary = "A CLI-based application to calculate implied probability from betting odds"
+url = "https://github.com/SanjayShetty01/betting-odds-converter"
+
+assets = [
+    {source = "target/release/betting_odds_converter", dest = "/usr/bin/betting_odds_converter", mode = "755"}
+]
+
+[package.metadata.deb]
+maintainer = "Sanjaya J. Shetty <sanjayashetty01@gmail.com>"
+copyright = "2024, Sanjaya J. Shetty <sanjayashetty01@gmail.com>"
+license-file = ["LICENSE", "4"]
+extended-description = """\
+ A CLI-based application to calculate implied probability from betting odds."""
+depends = "$auto"
+section = "utility"
+priority = "optional"
+assets = [
+    ["target/release/betting_odds_converter", "usr/bin/betting_odds_converter", "755"],
+    ["README.md", "usr/share/doc/betting_odds_converter/README", "644"],
+]
