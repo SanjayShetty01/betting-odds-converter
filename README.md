@@ -1,7 +1,5 @@
 # Betting Odds Calculator
 
-[![Scala Tests](https://github.com/SanjayShetty01/betting-odds-converter/actions/workflows/scala.yml/badge.svg)](https://github.com/SanjayShetty01/betting-odds-converter/actions/workflows/scala.yml)
-
 A Command Line Interface (CLI) application that converts various types of betting odds into implied probabilities. Implied probability provides insight into the likelihood of winning as determined by the betting market.
 
 ## Table of Contents
@@ -39,7 +37,41 @@ The application supports three widely used types of betting odds:
 To get started with the Betting Odds Calculator, you'll need to install it on your local machine.
 
 ## Installation
-[Need to finish]
+
+## Installation
+
+### From .deb (for Debian/Ubuntu-based systems)
+1. Download the `.deb` package from the [releases page](https://github.com/SanjayShetty01/betting-odds-converter/releases).
+2. Open a terminal and run:
+   ```bash
+   sudo dpkg -i betting-odds-converter_0.1.0-1_amd64.deb 
+   ```
+3. Install any missing dependencies:
+   ```bash
+   sudo apt-get install -f
+   ```
+
+### From .rpm (for Fedora/Red Hat-based systems)
+1. Download the `.rpm` package from the [releases page](https://github.com/SanjayShetty01/betting-odds-converter/releases).
+2. Open a terminal and run:
+   ```bash
+   sudo rpm -i  betting_odds_converter-0.1.0-1.x86_64.rpm 
+   ```
+
+### From Source
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/betting-odds-calculator.git
+   cd betting-odds-calculator
+   ```
+2. Build the project:
+   ```bash
+   cargo build --release
+   ```
+3. The compiled binary will be available in the `target/release/` directory. Run it:
+   ```bash
+   ./target/release/betting-odds-calculator
+   ```
 
 ## Usage
 
