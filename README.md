@@ -39,21 +39,7 @@ The application supports three widely used types of betting odds:
 To get started with the Betting Odds Calculator, you'll need to install it on your local machine.
 
 ## Installation
-
-1. **Prerequisites:**
-   - Ensure you have Java 11 or a compatible version installed on your system.
-
-2. **Download the JAR file:**
-   - You can download the executable JAR file from the [releases page](https://github.com/SanjayShetty01/betting-odds-converter/releases).
-
-3. **Run the Calculator:**
-   - Open your terminal or command prompt.
-   - Navigate to the directory containing the downloaded JAR file.
-   - Run the calculator using the following command:
-
-     ```shell
-     java -jar betting-odds-calculator.jar
-     ```
+[Need to finish]
 
 ## Usage
 
