@@ -42,3 +42,8 @@ bin/
 # general
 *.class
 
+
+
+# Added by cargo
+
+/target
