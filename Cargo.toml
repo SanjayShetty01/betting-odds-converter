@@ -17,7 +17,7 @@ summary = "A CLI-based application to calculate implied probability from betting
 url = "https://github.com/SanjayShetty01/betting-odds-converter"
 
 assets = [
-    {source = "target/release/betting_odds_converter", dest = "/usr/bin/betting_odds_converter", mode = "755"}
+    {source = "target/release/betting-odds-converter", dest = "/usr/bin/betting_odds_converter", mode = "755"}
 ]
 
 [package.metadata.deb]
@@ -30,6 +30,6 @@ depends = "$auto"
 section = "utility"
 priority = "optional"
 assets = [
-    ["target/release/betting_odds_converter", "usr/bin/betting_odds_converter", "755"],
+    ["target/release/betting-odds-converter", "usr/bin/betting_odds_converter", "755"],
     ["README.md", "usr/share/doc/betting_odds_converter/README", "644"],
 ]
