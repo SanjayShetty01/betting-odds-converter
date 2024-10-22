@@ -8,7 +8,7 @@ pub fn moneyline_prob(moneyline :f32) -> f32 {
         _ => ((moneyline.abs()) / (moneyline.abs() + 100.0)) * 100.0
     };
 
-    return probability;
+    return round_to_two_decimal_places(probability);
 }
 
 fn calculate_prob(odds: f32) -> f32 {
@@ -21,4 +21,46 @@ pub fn decimal_prob(decimal: f32) -> f32 {
 
 pub fn fraction_prob(fractions: f32) -> f32 {
     calculate_prob(fractions)
+}
+
+
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_round_to_two_decimal_places() {
+        assert_eq!(round_to_two_decimal_places(1.23456), 1.23);
+        assert_eq!(round_to_two_decimal_places(1.235), 1.24);
+        assert_eq!(round_to_two_decimal_places(100.0), 100.0);
+    }
+
+    #[test]
+    fn test_moneyline_prob_positive() {
+        let moneyline: f32 = 150.0;
+        let expected_prob: f32 = (100.0 / (moneyline + 100.0)) * 100.0;
+        assert_eq!(moneyline_prob(moneyline), round_to_two_decimal_places(expected_prob));
+    }
+
+    #[test]
+    fn test_moneyline_prob_negative() {
+        let moneyline: f32 = -150.0;
+        let expected_prob: f32 = (moneyline.abs() / (moneyline.abs() + 100.0)) * 100.0;
+        assert_eq!(moneyline_prob(moneyline), round_to_two_decimal_places(expected_prob));
+    }
+
+    #[test]
+    fn test_decimal_prob() {
+        let decimal: f32 = 2.5;
+        let expected_prob: f32 = (1.0 / decimal) * 100.0;
+        assert_eq!(decimal_prob(decimal), round_to_two_decimal_places(expected_prob));
+    }
+
+    #[test]
+    fn test_fraction_prob() {
+        let fractions: f32 = 5.0 / 2.0;
+        let expected_prob: f32 = (1.0 / fractions) * 100.0;
+        assert_eq!(fraction_prob(fractions), round_to_two_decimal_places(expected_prob));
+    }
 }
