@@ -8,6 +8,7 @@ edition = "2021"
 [dependencies]
 figlet-rs = "0.1.5"
 colored = "2"
+tabled = "0.16.0"
 
 [package.metadata.generate-rpm]
 name = "betting_odds_converter"
