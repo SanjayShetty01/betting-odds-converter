@@ -2,7 +2,7 @@ use std::io;
 use colored::* ;
 use crate::prob_functions;
 
-pub fn decimal_prob_calc() {
+pub fn decimal_prob_calc(wager: f64) {
     println!("{}", "Enter the Decimal Odds: ".blue());
     
     let mut user_entered_decimal_value = String::new();
@@ -24,7 +24,7 @@ pub fn decimal_prob_calc() {
     }
 }
 
-pub fn money_prob_calc() {
+pub fn money_prob_calc(wager: f64) {
     println!("{}", "Enter the Moneyline: ".blue());
 
     let mut user_entered_moneyline_value: String = String::new();
@@ -46,7 +46,7 @@ pub fn money_prob_calc() {
     }
 }
 
-pub fn fraction_prob_calc() {
+pub fn fraction_prob_calc(wager: f64) {
     println!("{}", "Enter the Fractional Odds (e.g., 3/4): ".blue());
     
     let mut user_entered_fraction = String::new();

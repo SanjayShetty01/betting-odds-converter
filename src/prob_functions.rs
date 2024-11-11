@@ -23,6 +23,11 @@ pub fn fraction_prob(fractions: f32) -> f32 {
     calculate_prob(fractions)
 }
 
+pub fn calculate_payout(implied_prob : f32, wager: f64) -> f64 {
+ let odds : f64 =  1.0 / (implied_prob as f64);
+
+ odds * wager
+}
 
 
 #[cfg(test)]
