@@ -29,6 +29,11 @@ pub fn calculate_payout(implied_prob : f32, wager: f64) -> f64 {
  odds * wager
 }
 
+pub fn calculate_percentage_return(payout: f64, wager: f64) -> f64 {
+    let return_percentage = ((payout - wager) / wager) * 100.0;
+    return return_percentage
+}
+
 
 #[cfg(test)]
 mod tests {
