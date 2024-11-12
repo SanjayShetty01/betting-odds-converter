@@ -15,10 +15,12 @@ fn main() {
     print!("{}", welcome_note.unwrap());
     println!("{}", "Calculates Implied Probability".blue());
 
+    let mut wager = utils::get_wager();
+
     let mut exit: bool = false;
 
     while  !exit {
- 
+        
         let mut num = String::new();
 
         utils::display_main_menu();
@@ -27,9 +29,19 @@ fn main() {
         .read_line(&mut num)
         .expect("Failed to read the number");
 
-        utils::which_calc_decider(&num.trim().parse::<i32>());
+        let parsed_num = num.trim().parse::<i32>();
+        
+        match parsed_num {
+            Ok(value) => {
+                utils::which_calc_decider(value, wager);
+                },
+                Err(_) => {
+                    println!("Invalid number! Please try again.");  
+                }
+            
+            };
 
-        println!("Press 'x' to exit or any other key to continue: ");
+        println!("Press 'x' to exit, 'c' to change the wager or any other key to continue: ");
 
         let mut final_call = String::new();
             io::stdin()
@@ -38,6 +50,8 @@ fn main() {
 
         if final_call.trim().eq_ignore_ascii_case("x") {
             exit = true; 
-    }
+        } else if final_call.trim().eq_ignore_ascii_case("c") {
+            wager = utils::get_wager();
+        }
 }
 }
