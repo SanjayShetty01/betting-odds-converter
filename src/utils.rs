@@ -1,6 +1,6 @@
 use crate::betting_odds_calculator;
 use colored::*;
-use std::{io, string};
+use std::io;
 use tabled::{  settings::{style::Style, themes::Theme, Color}, 
     Tabled, Table};
 
