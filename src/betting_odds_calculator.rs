@@ -13,6 +13,7 @@ pub fn decimal_prob_calc(wager: f64) {
 
     match user_entered_decimal_value.trim().parse::<f32>() {
         Ok(value) => {
+             println!();
             println!("{}", "Calculating the Values...".green());
             let prob : f32 = prob_functions::decimal_prob(value);
             let payout : f64 = prob_functions::calculate_payout(prob, wager);
@@ -38,6 +39,7 @@ pub fn money_prob_calc(wager: f64) {
 
     match user_entered_moneyline_value.trim().parse::<f32>() {
         Ok(value) => {
+             println!();
             println!("{}", "Calculating the Values...".green());
             let prob : f32 = prob_functions::moneyline_prob(value);
             let payout : f64 = prob_functions::calculate_payout(prob, wager);
@@ -68,6 +70,7 @@ pub fn fraction_prob_calc(wager: f64) {
     if parts.len() == 2 {
         match (parts[0].trim().parse::<f32>(), parts[1].trim().parse::<f32>()) {
             (Ok(numerator), Ok(denominator)) if denominator != 0.0 => {
+                 println!();
                 println!("{}", "Calculating the Values...".green());
                 let value = numerator / denominator;
                 let prob: f32 = prob_functions::fraction_prob(value);

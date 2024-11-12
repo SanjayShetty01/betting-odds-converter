@@ -14,6 +14,7 @@ fn main() {
     assert!(welcome_note.is_some());
     print!("{}", welcome_note.unwrap());
     println!("{}", "Calculates Implied Probability".blue());
+     println!();
 
     let mut wager = utils::get_wager();
 
@@ -22,7 +23,7 @@ fn main() {
     while  !exit {
         
         let mut num = String::new();
-
+        println!();
         utils::display_main_menu();
 
         io::stdin()
@@ -33,6 +34,7 @@ fn main() {
         
         match parsed_num {
             Ok(value) => {
+                println!();
                 utils::which_calc_decider(value, wager);
                 },
                 Err(_) => {
@@ -41,6 +43,7 @@ fn main() {
             
             };
 
+        println!();
         println!("Press 'x' to exit, 'c' to change the wager or any other key to continue: ");
 
         let mut final_call = String::new();
