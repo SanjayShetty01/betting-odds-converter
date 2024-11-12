@@ -1,6 +1,6 @@
 use std::io;
 use colored::* ;
-use crate::prob_functions;
+use crate::{prob_functions, utils};
 
 pub fn decimal_prob_calc(wager: f64) {
     println!("{}", "Enter the Decimal Odds: ".blue());
@@ -13,9 +13,12 @@ pub fn decimal_prob_calc(wager: f64) {
 
     match user_entered_decimal_value.trim().parse::<f32>() {
         Ok(value) => {
-            println!("{}", "Calculating the Odds...".green());
+            println!("{}", "Calculating the Values...".green());
             let prob : f32 = prob_functions::decimal_prob(value);
-            println!("{}", format!("The Implied Probability is {}%", prob).green());
+            let payout : f64 = prob_functions::calculate_payout(prob, wager);
+            let return_on_bet : f64 = prob_functions::calculate_percentage_return(payout, wager);
+
+            utils::display_metrics_table(prob as f64, payout, return_on_bet);
         }
 
         Err(_) => {
@@ -35,9 +38,12 @@ pub fn money_prob_calc(wager: f64) {
 
     match user_entered_moneyline_value.trim().parse::<f32>() {
         Ok(value) => {
-            println!("{}", "Calculating the Odds...".green());
+            println!("{}", "Calculating the Values...".green());
             let prob : f32 = prob_functions::moneyline_prob(value);
-            println!("{}", format!("The Implied Probability is {}%", prob).green());
+            let payout : f64 = prob_functions::calculate_payout(prob, wager);
+            let return_on_bet : f64 = prob_functions::calculate_percentage_return(payout, wager);
+
+            utils::display_metrics_table(prob as f64, payout, return_on_bet);
         }
 
         Err(_) => {
@@ -62,9 +68,13 @@ pub fn fraction_prob_calc(wager: f64) {
     if parts.len() == 2 {
         match (parts[0].trim().parse::<f32>(), parts[1].trim().parse::<f32>()) {
             (Ok(numerator), Ok(denominator)) if denominator != 0.0 => {
+                println!("{}", "Calculating the Values...".green());
                 let value = numerator / denominator;
                 let prob: f32 = prob_functions::fraction_prob(value);
-                println!("{}", format!("The Implied Probability is {}%", prob).green());
+                let payout : f64 = prob_functions::calculate_payout(prob, wager);
+                let return_on_bet : f64 = prob_functions::calculate_percentage_return(payout, wager);
+    
+                utils::display_metrics_table(prob as f64, payout, return_on_bet);
             }
             _ => {
                 println!("{}", "Invalid fraction entered. Please try again.".red());

@@ -50,7 +50,7 @@ fn main() {
 
         if final_call.trim().eq_ignore_ascii_case("x") {
             exit = true; 
-        } else if (final_call.trim().eq_ignore_ascii_case("c")) {
+        } else if final_call.trim().eq_ignore_ascii_case("c") {
             wager = utils::get_wager();
         }
 }

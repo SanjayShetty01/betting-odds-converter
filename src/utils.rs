@@ -1,7 +1,8 @@
 use crate::betting_odds_calculator;
 use colored::*;
-use std::io;
-use tabled::{Tabled, Table};
+use std::{io, string};
+use tabled::{  settings::{style::Style, themes::Theme, Color}, 
+    Tabled, Table};
 
 pub fn which_calc_decider(choice: i32, wager: f64) {
     match choice {
@@ -44,17 +45,34 @@ pub fn get_wager() -> f64 {
 #[derive(Tabled)]
 struct MetricRow {
     metric: &'static str,
-    value: f32,
+    value: String,
 }
 
-pub fn display_metrics_table(implied_prob: f32, payout: f32, return_percentage: f32) -> Table {
+pub fn display_metrics_table(implied_prob: f64, payout: f64, return_percentage: f64) {
     let metrics = vec![
-        MetricRow { metric: "Implied Probability (%)", value: implied_prob },
-        MetricRow { metric: "Payout", value: payout },
-        MetricRow { metric: "Return (%)", value: return_percentage },
+        MetricRow { metric: "Implied Probability (%)", value: format!("{:.2}",implied_prob) },
+        MetricRow { metric: "Payout", value: format!("{:.2}", payout) },
+        MetricRow { metric: "Return (%)", value: format!("{:.2}", return_percentage) },
     ];
 
-    let table = Table::new(metrics);
+    let mut style = Theme::from(Style::extended());
+    style.set_colors_top(Color::FG_RED);
+    style.set_colors_bottom(Color::FG_CYAN);
+    style.set_colors_left(Color::FG_BLUE);
+    style.set_colors_right(Color::FG_GREEN);
+    style.set_colors_corner_top_left(Color::FG_BLUE);
+    style.set_colors_corner_top_right(Color::FG_RED);
+    style.set_colors_corner_bottom_left(Color::FG_CYAN);
+    style.set_colors_corner_bottom_right(Color::FG_GREEN);
+    style.set_colors_intersection_bottom(Color::FG_CYAN);
+    style.set_colors_intersection_top(Color::FG_RED);
+    style.set_colors_intersection_right(Color::FG_GREEN);
+    style.set_colors_intersection_left(Color::FG_BLUE);
+    style.set_colors_intersection(Color::FG_MAGENTA);
+    style.set_colors_horizontal(Color::FG_MAGENTA);
+    style.set_colors_vertical(Color::FG_MAGENTA);
 
-    return table
+    let table = Table::new(metrics).with(style).to_string();
+
+    println!("{table}")
 }
