@@ -34,14 +34,14 @@ pub fn get_wager() -> f64 {
     io::stdin().read_line(&mut wager).expect("Failed to read the number");
 
     if wager.trim().is_empty() {
-        println!("No input provided, using default wager of 100");
+        println!("{}","No input provided, using default wager of 100".yellow());
         return 100.0;
     }
 
     match wager.trim().parse::<f64>() {
         Ok(value) => value,
         Err(_) => {
-            println!("Invalid input, using default wager of 100");
+            println!("{}","Invalid input, using default wager of 100".red());
             100.0
         }
     }
