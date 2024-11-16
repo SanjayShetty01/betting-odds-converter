@@ -33,6 +33,11 @@ pub fn get_wager() -> f64 {
     let mut wager = String::new();
     io::stdin().read_line(&mut wager).expect("Failed to read the number");
 
+    if wager.trim().is_empty() {
+        println!("No input provided, using default wager of 100");
+        return 100.0;
+    }
+
     match wager.trim().parse::<f64>() {
         Ok(value) => value,
         Err(_) => {
