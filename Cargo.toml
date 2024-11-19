@@ -1,6 +1,6 @@
 [package]
 name = "betting-odds-converter"
-version = "0.1.0"
+version = "3.1.0"
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
@@ -12,7 +12,7 @@ tabled = "0.16.0"
 
 [package.metadata.generate-rpm]
 name = "betting_odds_converter"
-version = "0.1.0"
+version = "3.1.0"
 license = "MIT"
 summary = "A CLI-based application to calculate implied probability from betting odds"
 url = "https://github.com/SanjayShetty01/betting-odds-converter"

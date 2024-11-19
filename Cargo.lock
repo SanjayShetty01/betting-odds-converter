@@ -4,7 +4,7 @@ version = 3
 
 [[package]]
 name = "betting-odds-converter"
-version = "0.1.0"
+version = "3.1.0"
 dependencies = [
  "colored",
  "figlet-rs",
