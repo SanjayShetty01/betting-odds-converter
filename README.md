@@ -1,4 +1,4 @@
-# Betting Odds Calculator
+# Betting Odds Convertor
 
 [![Rust Testing](https://github.com/SanjayShetty01/betting-odds-converter/actions/workflows/rust-test.yml/badge.svg)](https://github.com/SanjayShetty01/betting-odds-converter/actions/workflows/rust-test.yml)
 
@@ -16,7 +16,7 @@ A Command Line Interface (CLI) application that converts various types of bettin
 
 ## About
 
-The Betting Odds Calculator is a Scala project that allows users to easily convert different types of betting odds into implied probabilities. It provides valuable insights for bettors, helping them make informed decisions based on market odds.
+The Betting Odds Convertor allows users to easily convert different types of betting odds into implied probabilities. It provides valuable insights for bettors, helping them make informed decisions based on market odds.
 
 ## Supported Betting Odds
 
