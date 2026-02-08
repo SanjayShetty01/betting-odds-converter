@@ -41,6 +41,8 @@ To get started with the Betting Odds Calculator, you'll need to install it on yo
 ## Installation
 
 ## Installation
+### From .exe (for Windows)
+1. Download the `.exe` from the [releases page](https://github.com/SanjayShetty01/betting-odds-converter/releases)
 
 ### From .deb (for Debian/Ubuntu-based systems)
 1. Download the `.deb` package from the [releases page](https://github.com/SanjayShetty01/betting-odds-converter/releases).
