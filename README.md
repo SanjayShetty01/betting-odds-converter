@@ -39,8 +39,6 @@ The application supports three widely used types of betting odds:
 To get started with the Betting Odds Calculator, you'll need to install it on your local machine.
 
 ## Installation
-
-## Installation
 ### From .exe (for Windows)
 1. Download the `.exe` from the [releases page](https://github.com/SanjayShetty01/betting-odds-converter/releases)
 
