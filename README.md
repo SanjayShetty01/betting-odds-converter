@@ -16,7 +16,7 @@ A Command Line Interface (CLI) application that converts various types of bettin
 
 ## About
 
-The Betting Odds Convertor allows users to easily convert different types of betting odds into implied probabilities. It provides valuable insights for bettors, helping them make informed decisions based on market odds.
+The Convertor allows users to easily convert different types of betting odds into implied probabilities. It provides valuable insights for bettors, helping them make informed decisions based on market odds.
 
 ## Supported Betting Odds
 
@@ -78,7 +78,8 @@ To get started with the Betting Odds Calculator, you'll need to install it on yo
 ## Usage
 
 #### Screenshot
-![image](https://github.com/user-attachments/assets/4e72d5cb-855b-48d1-8864-cb953fe02feb)
+
+![image](https://github.com/user-attachments/assets/57145628-210d-4f34-b111-f66430394e73)
 
 1. **Select Betting Odds Type:**
    - Choose the type of betting odds you want to convert (American Moneyline, Decimals, or Fractions).
