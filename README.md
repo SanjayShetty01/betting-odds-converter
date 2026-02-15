@@ -1,4 +1,4 @@
-# Betting Odds Convertor
+# <img src="https://github.com/user-attachments/assets/fd1ed9b8-6952-43af-9064-251eb494bb5a" width="27" height="27"> Implied
 
 [![Rust Testing](https://github.com/SanjayShetty01/betting-odds-converter/actions/workflows/rust-test.yml/badge.svg)](https://github.com/SanjayShetty01/betting-odds-converter/actions/workflows/rust-test.yml)
 
