@@ -40,10 +40,10 @@ To get started with the Betting Odds Calculator, you'll need to install it on yo
 
 ## Installation
 ### From .exe (for Windows)
-1. Download the `.exe` from the [releases page](https://github.com/SanjayShetty01/betting-odds-converter/releases)
+1. Download the `.exe` from the [releases page](https://github.com/SanjayShetty01/implied/releases)
 
 ### From .deb (for Debian/Ubuntu-based systems)
-1. Download the `.deb` package from the [releases page](https://github.com/SanjayShetty01/betting-odds-converter/releases).
+1. Download the `.deb` package from the [releases page](https://github.com/SanjayShetty01/implied/releases).
 2. Open a terminal and run:
    ```bash
    sudo dpkg -i betting-odds-converter_0.1.0-1_amd64.deb 
@@ -54,7 +54,7 @@ To get started with the Betting Odds Calculator, you'll need to install it on yo
    ```
 
 ### From .rpm (for Fedora/Red Hat-based systems)
-1. Download the `.rpm` package from the [releases page](https://github.com/SanjayShetty01/betting-odds-converter/releases).
+1. Download the `.rpm` package from the [releases page](https://github.com/SanjayShetty01/implied/releases).
 2. Open a terminal and run:
    ```bash
    sudo rpm -i  betting_odds_converter-0.1.0-1.x86_64.rpm 
@@ -72,7 +72,7 @@ To get started with the Betting Odds Calculator, you'll need to install it on yo
    ```
 3. The compiled binary will be available in the `target/release/` directory. Run it:
    ```bash
-   ./target/release/betting-odds-calculator
+   ./target/release/implied
    ```
 
 ## Usage
