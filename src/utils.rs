@@ -1,18 +1,19 @@
-use crate::betting_odds_calculator;
+use crate::implied;
 use colored::*;
 use std::io;
-use tabled::{  settings::{style::Style, themes::Theme, Color}, 
-    Tabled, Table};
+use tabled::{
+    settings::{style::Style, themes::Theme, Color},
+    Table, Tabled,
+};
 
 pub fn which_calc_decider(choice: i32, wager: f64) {
     match choice {
-        1 => betting_odds_calculator::money_prob_calc(wager),
-        2 => betting_odds_calculator::decimal_prob_calc(wager),
-        3 => betting_odds_calculator::fraction_prob_calc(wager),
+        1 => implied::money_prob_calc(wager),
+        2 => implied::decimal_prob_calc(wager),
+        3 => implied::fraction_prob_calc(wager),
         _ => println!("Please choose a valid option between 1-3."),
     }
 }
-
 
 pub fn display_main_menu() {
     let odds = vec![
@@ -31,17 +32,22 @@ pub fn get_wager() -> f64 {
     println!("Enter your wager (Default is 100): ");
 
     let mut wager = String::new();
-    io::stdin().read_line(&mut wager).expect("Failed to read the number");
+    io::stdin()
+        .read_line(&mut wager)
+        .expect("Failed to read the number");
 
     if wager.trim().is_empty() {
-        println!("{}","No input provided, using default wager of 100".yellow());
+        println!(
+            "{}",
+            "No input provided, using default wager of 100".yellow()
+        );
         return 100.0;
     }
 
     match wager.trim().parse::<f64>() {
         Ok(value) => value,
         Err(_) => {
-            println!("{}","Invalid input, using default wager of 100".red());
+            println!("{}", "Invalid input, using default wager of 100".red());
             100.0
         }
     }
@@ -55,9 +61,18 @@ struct MetricRow {
 
 pub fn display_metrics_table(implied_prob: f64, payout: f64, return_percentage: f64) {
     let metrics = vec![
-        MetricRow { metric: "Implied Probability (%)", value: format!("{:.2}",implied_prob) },
-        MetricRow { metric: "Payout", value: format!("{:.2}", payout) },
-        MetricRow { metric: "Return (%)", value: format!("{:.2}", return_percentage) },
+        MetricRow {
+            metric: "Implied Probability (%)",
+            value: format!("{:.2}", implied_prob),
+        },
+        MetricRow {
+            metric: "Payout",
+            value: format!("{:.2}", payout),
+        },
+        MetricRow {
+            metric: "Return (%)",
+            value: format!("{:.2}", return_percentage),
+        },
     ];
 
     let mut style = Theme::from(Style::extended());
